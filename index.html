@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Инвайтер PRO — продвижение в Telegram</title>
+  <meta name="description" content="Инвайтер PRO — рост аудитории в Telegram: парсинг ЦА, инвайтинг, рассылки, мультиаккаунты и прокси. Пробная версия." />
+  <meta name="theme-color" content="#0b1220" />
+  <style>
+    :root{--bg:#0b1220;--card:#0f172a;--muted:#93a4c3;--line:#1f2a44;--text:#e6eefc;--accent:#6ea8ff;--accent-2:#4ade80;--danger:#ff6b6b;--radius:14px;--shadow:0 12px 35px rgba(0,0,0,.35)}
+    [data-theme="light"]{--bg:#f5f7ff;--card:#ffffff;--text:#0b1220;--muted:#4b5877;--line:#e5ecff;--accent:#0b5cff;--accent-2:#16a34a;--danger:#dc2626}
+    *{box-sizing:border-box} html,body{margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+    a{color:inherit;text-decoration:none} .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 18px;border-radius:12px;font-weight:700;border:1px solid transparent;transition:.2s ease;cursor:pointer;text-align:center;white-space:nowrap}
+    .btn.primary{background:var(--accent);color:#071022;box-shadow:var(--shadow)} .btn.primary:hover{filter:brightness(.95)}
+    .btn.ghost{border-color:#2b3b63;color:#cfe2ff;background:rgba(17,27,53,.4)} [data-theme="light"] .btn.ghost{color:#0b1220;background:#eef3ff;border-color:#c8d7ff}
+    .hdr{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(8px);background:rgba(7,16,34,.6);border-bottom:1px solid #111a31}
+    [data-theme="light"] .hdr{background:rgba(255,255,255,.65);border-bottom:1px solid #e9efff}
+    .hdr-in{display:flex;align-items:center;justify-content:space-between;height:64px} .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.3px} .dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
+    .nav{display:flex;gap:14px;flex-wrap:wrap} .nav a{padding:8px 10px;border-radius:8px;opacity:.9} .nav a:hover{opacity:1}
+    .theme-toggle{margin-left:10px;border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-size:14px;cursor:pointer}
+    .hero{position:relative;padding:40px 0 24px} .hero .bg{position:relative;overflow:hidden;border-radius:16px;border:1px solid var(--line)} .hero img{width:100%;height:auto;display:block;opacity:.98}
+    .hero .overlay{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.65));padding:16px;border-radius:0 0 16px 16px}
+    .hero .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    section{padding:36px 0} .sec-title{font-size:24px;margin:0 0 14px} .grid{display:grid;gap:16px} .g-2{grid-template-columns:repeat(2,minmax(0,1fr))} .g-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
+    [data-theme="light"] .card{background:#fff;border-color:#e7eeff;box-shadow:0 10px 28px rgba(29,69,156,.08)}
+    .img-card img{width:100%;height:auto;border-radius:12px} .muted{color:var(--muted)}
+    .list{padding-left:20px;margin:8px 0} .list li{margin:6px 0}
+    .form{display:grid;gap:10px} .input{background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:10px;color:var(--text);padding:12px 12px}
+    [data-theme="light"] .input{background:#fff;border-color:#dfe8ff} .ok{color:var(--accent-2);font-weight:800} .err{color:var(--danger);font-weight:800}
+    .ftr{border-top:1px solid #111a31;color:#9eb3df;padding:18px 0;margin-top:22px} [data-theme="light"] .ftr{color:#4b5877;border-top-color:#e7eeff}
+    .float-cta{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));display:flex;gap:10px;justify-content:center;z-index:60} .float-cta .btn{flex:1;max-width:520px}
+    @media (max-width:960px){.g-2{grid-template-columns:1fr} .g-3{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <header class="hdr">
+    <div class="wrap hdr-in">
+      <div class="brand"><span class="dot"></span> Инвайтер PRO</div>
+      <nav class="nav">
+        <a href="#how">Как работает</a><a href="#pricing">Тарифы</a><a href="#proof">Результаты</a><a href="#ui">Скрины</a><a href="#contact">Контакты</a>
+      </nav>
+      <button class="theme-toggle" id="themeBtn">🌙 Тема</button>
+    </div>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="wrap">
+      <div class="bg">
+        <img src="assets/hero.jpg" alt="Инвайтер PRO — приведёт клиентов из Telegram">
+        <div class="overlay">
+          <div class="cta">
+            <a class="btn primary cta-buy" href="https://t.me/Kostiantyn_Zabazaichenko" target="_blank" rel="noopener">💬 Заявка на покупку</a>
+            <a class="btn ghost cta-channel" href="https://t.me/+tF8ERGPTB940NmQ0" target="_blank" rel="noopener">📢 Наш Telegram-канал</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <h2 class="sec-title">Как это работает</h2>
+      <div class="grid g-2">
+        <div class="card img-card">
+          <img src="assets/banner_wide.jpg" alt="Как это работает — баннер">
+          <p class="muted">Софт ежедневно приводит заинтересованных людей: парсинг ЦА → прогрев/инвайтинг → заявки.</p>
+        </div>
+        <div class="card img-card">
+          <img src="assets/invite.jpg" alt="Инвайтинг — безопасные лимиты">
+          <p class="muted">Инвайтинг с безопасными лимитами: первые 7 дней по 100–200/день, далее не выше 15% от размера чата.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <h2 class="sec-title">Тарифы</h2>
+      <div class="grid g-3">
+        <div class="card">
+          <h3 style="margin:0 0 8px">Бесплатный софт</h3>
+          <p class="muted">Вы подписываетесь — и получаете софт <b>бесплатно</b>. Никаких плат за использование.</p>
+        </div>
+        <div class="card" style="border:2px solid #3b82f6">
+          <h3 style="margin:0 0 8px">Подписка</h3>
+          <p class="muted">Единственное условие — активная подписка на канал/сообщество. Она открывает доступ к софту.</p>
+          <a class="btn primary cta-channel" href="https://t.me/+tF8ERGPTB940NmQ0" target="_blank" rel="noopener">Подписаться</a>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 8px">Инструкция + помощь</h3>
+          <p class="muted">Полная информация: как установить, настроить и пользоваться — <b>$10</b>.</p>
+          <a class="btn ghost cta-buy" href="https://t.me/Kostiantyn_Zabazaichenko" target="_blank" rel="noopener">Получить подробности</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="service">
+    <div class="wrap">
+      <div class="card img-card">
+        <img src="assets/consult.jpg" alt="Заказать услугу и получить консультацию">
+        <p class="muted">Нет времени разбираться? Закажи настройку у профи — поможем получить первые заявки в первые сутки.</p>
+        <div style="margin-top:10px"><a class="btn primary cta-buy" href="https://t.me/Kostiantyn_Zabazaichenko" target="_blank" rel="noopener">Связаться</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proof">
+    <div class="wrap">
+      <h2 class="sec-title">Результаты в группах</h2>
+      <div class="card img-card">
+        <img src="assets/proof_invited.jpg" alt="Список приглашённых пользователей">
+        <p class="muted">Реальные логи Telegram: приглашения в группы идут, часть пользователей остаётся — дальше работает контент и оффер.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ui">
+    <div class="wrap">
+      <h2 class="sec-title">Как выглядит софт</h2>
+      <div class="grid g-2">
+        <div class="card img-card"><img src="assets/ui_1.jpg" alt="Интерфейс: Telegram Inviter"></div>
+        <div class="card img-card"><img src="assets/ui_2.jpg" alt="Интерфейс: Mass Telegram Sender Pro"></div>
+        <div class="card img-card"><img src="assets/ui_3.jpg" alt="Интерфейс: настройка параметров"></div>
+        <div class="card img-card"><img src="assets/ui_4.jpg" alt="Интерфейс: отчеты и статистика"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="grid g-2">
+        <div class="card">
+          <h3 style="margin:0 0 8px">Заявка на консультацию</h3>
+          <p class="muted" style="margin:0 0 8px">Оставь контакты — напишем в Telegram.</p>
+          <form id="leadForm" class="form">
+            <input class="input" type="text" name="name" placeholder="Имя" required>
+            <input class="input" type="text" name="tg" placeholder="Телеграм @username" required>
+            <input class="input" type="text" name="business" placeholder="Ниша / проект">
+            <textarea class="input" name="comment" placeholder="Коротко: задача, бюджет, сроки" rows="4"></textarea>
+            <button class="btn primary" type="submit">Отправить</button>
+            <div id="formMsg" class="muted"></div>
+          </form>
+          <small class="muted">Нажимая «Отправить», вы соглашаетесь с обработкой данных для связи.</small>
+        </div>
+        <div class="card" style="display:flex;gap:12px;flex-direction:column;justify-content:center">
+          <div><h3 style="margin:0 0 6px">Связаться напрямую</h3>
+            <p class="muted" style="margin:0">Ответим быстро. Подскажем лимиты и сценарии.</p></div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn primary cta-buy" href="https://t.me/Kostiantyn_Zabazaichenko" target="_blank" rel="noopener">💬 Написать</a>
+            <a class="btn ghost cta-channel" href="https://t.me/+tF8ERGPTB940NmQ0" target="_blank" rel="noopener">📢 Канал</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="float-cta"><a class="btn primary cta-trial" href="https://t.me/RukzakIKoshelek_bot" target="_blank" rel="noopener">🆓 Получить пробную версию</a></div>
+
+  <footer class="ftr">
+    <div class="wrap" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+      <div>© 2025 Инвайтер PRO</div>
+      <div style="opacity:.85">Канал: <a href="https://t.me/+tF8ERGPTB940NmQ0" target="_blank" rel="noopener">t.me/+tF8ERGPTB940NmQ0</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const themeBtn=document.getElementById('themeBtn');
+    themeBtn.addEventListener('click',()=>{const html=document.documentElement;const next=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',next);themeBtn.textContent=next==='dark'?'🌙 Тема':'☀️ Тема';});
+
+    // Telegram form sender — token & chat id already included
+    const BOT_TOKEN = "7622638272:AAHD5bN2L481YgmIWciaY5673PUE_ADucdM";
+    const CHAT_ID = "7588313551";
+
+    const form=document.getElementById('leadForm'); const msg=document.getElementById('formMsg');
+    form.addEventListener('submit',async(e)=>{
+      e.preventDefault(); msg.textContent="Отправляем...";
+      const d=new FormData(form);
+      const text=`🟢 <b>Новая заявка с лендинга</b>%0A👤 Имя: ${encodeURIComponent((d.get('name')||'').trim())}%0A💬 Telegram: ${encodeURIComponent((d.get('tg')||'').trim())}%0A🏷 Ниша: ${encodeURIComponent((d.get('business')||'').trim())}%0A📝 Комментарий: ${encodeURIComponent((d.get('comment')||'').trim())}%0A⏰ Время: ${encodeURIComponent(new Date().toLocaleString())}`;
+      try{
+        const url=`https://api.telegram.org/bot$7622638272:AAHD5bN2L481YgmIWciaY5673PUE_ADucdM/sendMessage?chat_id=$7588313551&parse_mode=HTML&text=${text}`;
+        const res=await fetch(url);
+        if(!res.ok) throw new Error(await res.text());
+        msg.innerHTML="<span class='ok'>Готово! Мы ответим в Telegram.</span>"; form.reset();
+      }catch(err){ console.error(err); msg.innerHTML="<span class='err'>Не удалось отправить. Напишите нам в Telegram: @Kostiantyn_Zabazaichenko</span>"; }
+    });
+  </script>
+</body>
+</html>
